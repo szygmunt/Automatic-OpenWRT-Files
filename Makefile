@@ -1,9 +1,9 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=automatic
-PKG_VERSION:=0.7.2
+PKG_VERSION:=0.8.3
 PKG_RELEASE:=1
-PKG_REV:=3acd9b3f0956ad27c339ff37f769cc20966967a5
+PKG_REV:=7059845b81a887dba1d69b4d35420e6ce791187f
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/automatic-$(PKG_VERSION)
 PKG_SOURCE:=${PKG_NAME}-$(PKG_VERSION).tar.gz
@@ -14,6 +14,8 @@ PKG_SOURCE_PROTO:=git
 # Do not check mirrors for source
 PKG_SOURCE_MIRROR=0
 
+PKG_FIXUP:=autoreconf
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/automatic
@@ -21,7 +23,7 @@ define Package/automatic
   CATEGORY:=Network
   DEPENDS:=+libcurl +libxml2 +libpcrecpp +libpcre
   TITLE:=A RSS torrent downloader
-  URL:=http://kylek.is-a-geek.org:31337/Automatic/
+  URL:=https://github.com/1100101/Automatic
 endef
 
 define Package/automatic/Description
